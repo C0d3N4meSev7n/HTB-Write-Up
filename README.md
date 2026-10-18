@@ -28,9 +28,9 @@ Every write-up follows the same skeleton:
 
 ### HTB Labs
 
-| Date | Challenge | Category | Difficulty | Approach | Vulnerability |
-|------|-----------|----------|------------|----------|---------------|
-| 18/10/2026 | [Flag Command](HTB-Labs/flag-command/README.md) | Web | Very Easy | Black-box | Sensitive Data Exposure (CWE-200) |
+| Published | Challenge | Category | Difficulty | Approach | Vulnerability |
+|-----------|-----------|----------|------------|----------|---------------|
+| 2026-10-18 | [Flag Command](HTB-Labs/flag-command/README.md) | Web | Very Easy | Black-box | Sensitive Data Exposure (CWE-200) |
 
 ## Notes
 
