@@ -103,7 +103,7 @@ JSON parser differential between a Go gateway and a Python backend allows an una
                 return jsonify(anomaly)
             elif data['action'] == "getSecureCode":
                 return jsonify({
-        		        # Returns the flag in the response
+                    # Returns the flag in the response
                     "flag": os.getenv("FLAG", "HTB{flag_not_set}"),
                     "name": "Captain's Log",
                     "src": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600"
@@ -135,7 +135,7 @@ JSON parser differential between a Go gateway and a Python backend allows an una
     
     ```json
     {
-    	"action": "getSecureCode",
+      "action": "getSecureCode",
       "Action": "getcosmic"
     }
     ```
