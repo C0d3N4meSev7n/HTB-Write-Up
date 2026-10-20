@@ -31,6 +31,7 @@ Every write-up follows the same skeleton:
 | Published | Challenge | Category | Difficulty | Approach | Vulnerability |
 |-----------|-----------|----------|------------|----------|---------------|
 | 2026-10-18 | [Flag Command](HTB-Labs/flag-command/README.md) | Web | Very Easy | Black-box | Sensitive Data Exposure (CWE-200) |
+| 2026-10-20 | [Space Explorer](HTB-Labs/space-explorer/README.md) | Web | Very Easy | White-box | JSON Parser Differential (CWE-436) |
 
 ## Notes
 
