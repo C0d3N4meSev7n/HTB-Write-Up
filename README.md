@@ -32,6 +32,7 @@ Every write-up follows the same skeleton:
 |-----------|-----------|----------|------------|----------|---------------|
 | 2026-10-18 | [Flag Command](HTB-Labs/flag-command/README.md) | Web | Very Easy | Black-box | Sensitive Data Exposure (CWE-200) |
 | 2026-10-20 | [Space Explorer](HTB-Labs/space-explorer/README.md) | Web | Very Easy | White-box | JSON Parser Differential (CWE-436) |
+| 2026-10-24 | [TreaPortal](HTB-Labs/treaportal/README.md) | Web | Easy | White-box | XPath Injection (CWE-643) |
 
 ## Notes
 
