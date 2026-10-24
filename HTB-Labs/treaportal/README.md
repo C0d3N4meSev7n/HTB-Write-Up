@@ -195,7 +195,7 @@ XPath Injection (CWE-643) in `/api/user` allows an authenticated employee to byp
 
 ---
 
-#### PART IV: Impact
+### PART IV: Impact
 
 - Self-registration has a low barrier to entry because the internal domain is exposed in the registration form's placeholder. As a result, an external attacker can register an employee account and exploit the endpoint with little effort. Once exploited, the endpoint can disclose the administrator's record, including sensitive fields such as salary and flag. If the XPath expression can be crafted to target other users, the same vulnerability may expose their records as well.
 - **Severity: High.**
@@ -203,15 +203,15 @@ XPath Injection (CWE-643) in `/api/user` allows an authenticated employee to byp
 
 ---
 
-#### PART V: Root Cause & Remediation
+### PART V: Root Cause & Remediation
 
-- **Root Cause:**
-    - **XPath Injection (CWE-643):** `getUserByUsername()` constructs the XPath query through raw string interpolation (`//user[username='${username}']`) instead of safely binding or escaping the input. As a result, attacker-controlled input can be interpreted as XPath syntax rather than data.
-    - **Type safety bypassed at the entry point:** The `req.query as any` assertion bypasses TypeScript's static type checking. It does not validate or convert the runtime value, allowing an array to reach a function that is declared to accept a string and eventually flow into the XPath query.
-    - **Both defenses assume that `username` is a string:** The ownership check (`typeof username === 'string'`) skips validation for arrays, while the blacklist uses array `includes()` semantics, which check for exact element matches rather than substring matches. As a result, repeated query parameters can produce an array that bypasses both checks.
-    - **Excessive data exposure:** The endpoint returns sensitive fields such as `salary` and `flag` regardless of whether the frontend needs them. Once an attacker can retrieve a user's record, these fields are exposed in the response without requiring an additional request.
-- **Remediation:**
-    - **Validate query parameters:** Define a Fastify JSON Schema for `querystring` that requires `username` to be a single string and rejects array values. This closes the array-based bypass at the entry point instead of relying solely on type checks within individual functions.
-    - **Prevent XPath injection:** Avoid interpolating user input directly into the XPath expression. Use a parameterized query mechanism if the library supports one; otherwise, apply context-appropriate XPath escaping or use a safe query-building approach that separates the expression from the input data.
-    - **Preserve type safety:** Avoid using `as any` on request input. Use schema validation to validate the runtime value and provide appropriate TypeScript types, rather than bypassing the type system with a cast.
-    - **Minimize response data:** Return only the fields required by the UI (`username`, `email`, `role`). Sensitive fields such as `salary` and `flag` should not be included in a general-purpose user lookup response unless explicitly required and authorized.
+#### Root Cause:
+- **XPath Injection (CWE-643):** `getUserByUsername()` constructs the XPath query through raw string interpolation (`//user[username='${username}']`) instead of safely binding or escaping the input. As a result, attacker-controlled input can be interpreted as XPath syntax rather than data.
+- **Type safety bypassed at the entry point:** The `req.query as any` assertion bypasses TypeScript's static type checking. It does not validate or convert the runtime value, allowing an array to reach a function that is declared to accept a string and eventually flow into the XPath query.
+- **Both defenses assume that `username` is a string:** The ownership check (`typeof username === 'string'`) skips validation for arrays, while the blacklist uses array `includes()` semantics, which check for exact element matches rather than substring matches. As a result, repeated query parameters can produce an array that bypasses both checks.
+- **Excessive data exposure:** The endpoint returns sensitive fields such as `salary` and `flag` regardless of whether the frontend needs them. Once an attacker can retrieve a user's record, these fields are exposed in the response without requiring an additional request.
+#### Remediation:
+- **Validate query parameters:** Define a Fastify JSON Schema for `querystring` that requires `username` to be a single string and rejects array values. This closes the array-based bypass at the entry point instead of relying solely on type checks within individual functions.
+- **Prevent XPath injection:** Avoid interpolating user input directly into the XPath expression. Use a parameterized query mechanism if the library supports one; otherwise, apply context-appropriate XPath escaping or use a safe query-building approach that separates the expression from the input data.
+- **Preserve type safety:** Avoid using `as any` on request input. Use schema validation to validate the runtime value and provide appropriate TypeScript types, rather than bypassing the type system with a cast.
+- **Minimize response data:** Return only the fields required by the UI (`username`, `email`, `role`). Sensitive fields such as `salary` and `flag` should not be included in a general-purpose user lookup response unless explicitly required and authorized.
