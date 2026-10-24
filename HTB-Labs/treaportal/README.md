@@ -69,8 +69,8 @@ XPath Injection (CWE-643) in `/api/user` allows an authenticated employee to byp
         await fs.writeFile(FILE, xml, 'utf-8')
     }
     export async function initialize(): Promise<void> {
-    		...
-    		catch {
+        ...
+        catch {
             await createDatabase()
         }
     }
@@ -81,7 +81,7 @@ XPath Injection (CWE-643) in `/api/user` allows an authenticated employee to byp
     
     ```tsx
     export async function createUser(username: string, email: string, password: string) {
-    		...
+        ...
         idEl.textContent = id.toString();
         usernameEl.textContent = username;
         emailEl.textContent = email;
@@ -89,7 +89,7 @@ XPath Injection (CWE-643) in `/api/user` allows an authenticated employee to byp
         salaryEl.textContent = (1000).toString();
         roleEl.textContent = "employee";
         flagEl.textContent = "";
-    		...
+        ...
     }
     ```
     
@@ -98,7 +98,7 @@ XPath Injection (CWE-643) in `/api/user` allows an authenticated employee to byp
 #### III.2: Input Mapping
 
 - Since the `Search` feature is the only input point, tracing the input from source to sink is the most effective approach.
-- Searching for an employee sends the following request, which returns TOO MUCH data that the UI never renders.
+- Searching for an employee sends the following request, which returns SOME SENSITIVE FIELDS that the UI never renders.
     
     ![image.png](images/image%204.png)
     
