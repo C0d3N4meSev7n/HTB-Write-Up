@@ -38,10 +38,10 @@ Every write-up follows the same skeleton:
 ### HTB CTF
 
 ```http
-HTTP/1.1 202 Accepted
+HTTP/1.1 200 OK
 Content-Type: text/plain
 
-HTB CTF write-ups are in progress. Check back soon.
+HTB CTF write-ups are in progress. Please wait...
 ```
 
 ## Notes
