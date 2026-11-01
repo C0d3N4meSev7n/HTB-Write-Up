@@ -1,4 +1,4 @@
-# HTB-Write-Up
+# HTB Write-Ups
 
 ## Table of Contents
 - [About](#about)
