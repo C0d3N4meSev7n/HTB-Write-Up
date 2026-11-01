@@ -35,6 +35,15 @@ Every write-up follows the same skeleton:
 | 2026-10-24 | [TreaPortal](HTB-Labs/treaportal/README.md) | Web | Easy | White-box | XPath Injection (CWE-643) |
 | 2026-10-30 | [Secure Notes](HTB-Labs/secure-notes/README.md) | Web | Easy | White-box | Prototype Pollution (CVE-2023-3696) |
 
+### HTB CTF
+
+```http
+HTTP/1.1 202 Accepted
+Content-Type: text/plain
+
+HTB CTF write-ups are in progress. Check back soon.
+```
+
 ## Notes
 
 - Flags are redacted in all screenshots.
