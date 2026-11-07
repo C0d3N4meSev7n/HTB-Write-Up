@@ -37,12 +37,9 @@ Every write-up follows the same skeleton:
 
 ### HTB CTF
 
-```http
-HTTP/1.1 200 OK
-Content-Type: text/plain
-
-HTB CTF write-ups are in progress. Please wait...
-```
+| Published | Challenge | Category | Difficulty | Approach | Vulnerability |
+|-----------|-----------|----------|------------|----------|---------------|
+| 2026-11-07 | [Jailbreak](HTB-CTF/jailbreak/README.md) | Web | Very Easy | Black-box | XML External Entity (XXE) Injection (CWE-611) |
 
 ## Notes
 
