@@ -40,6 +40,7 @@ Every write-up follows the same skeleton:
 | Published | Challenge | Category | Difficulty | Approach | Vulnerability |
 |-----------|-----------|----------|------------|----------|---------------|
 | 2026-11-07 | [Jailbreak](HTB-CTF/jailbreak/README.md) | Web | Very Easy | Black-box | XXE Injection (CWE-611) |
+| 2026-11-08 | [TimeKORP](HTB-CTF/timeKORP/README.md) | Web | Very Easy | White-box | OS Command Injection (CWE-78) |
 
 ## Notes
 
