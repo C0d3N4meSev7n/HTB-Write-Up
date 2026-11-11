@@ -20,7 +20,7 @@
     
     ![image.png](images/image%201.png)
     
-- This is a standard login form with a `Forgot Password?` feature.
+- This is a standard login form with a `Forget Password?` feature.
     
     ![image.png](images/image%202.png)
     
