@@ -36,6 +36,7 @@ Every write-up follows the same skeleton:
 | 2026-10-30 | [Secure Notes](HTB-Labs/secure-notes/README.md) | Web | Easy | White-box | Prototype Pollution (CVE-2023-3696) |
 
 ### HTB CTF
+#### Event: CTF Try Out 2026
 
 | Published | Challenge | Category | Difficulty | Approach | Vulnerability |
 |-----------|-----------|----------|------------|----------|---------------|
