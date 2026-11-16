@@ -44,6 +44,7 @@ Every write-up follows the same skeleton:
 | 2026-11-08 | [TimeKORP](HTB-CTF/timeKORP/README.md) | Web | Very Easy | White-box | OS Command Injection (CWE-78) |
 | 2026-11-11 | [Guild](HTB-CTF/guild/README.md) | Web | Easy | White-box | Server-Side Template Injection (CWE-1336) |
 | 2026-11-12 | [Labyrinth Linguist](HTB-CTF/labyrinth_linguist/README.md) | Web | Easy | White-box | Server-Side Template Injection (CWE-1336) |
+| 2026-11-16 | [Blueprint Heist](HTB-CTF/blueprint_heist/README.md) | Web | Medium | White-box | Chained Vulnerabilities (SSRF → LFI → SQLi → SSTI → RCE) |
 
 ## Notes
 
